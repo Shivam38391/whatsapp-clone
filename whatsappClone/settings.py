@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -70,7 +72,29 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "whatsappClone.wsgi.application"
+# WSGI_APPLICATION = "whatsappClone.wsgi.application"
+ASGI_APPLICATION = "whatsappClone.asgi.application"
+
+
+
+
+
+
+
+
+
+
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
+
+
+
 
 
 # Database

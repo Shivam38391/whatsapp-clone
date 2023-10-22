@@ -11,10 +11,10 @@ def index(request):
     context= {"users": users}
     return render(request, "index.html", context)
 
-def chatPage(request):
-    
+def chatPage(request, username):
+    user_obj = User.objects.get(username=username)
     users = User.objects.exclude(username=request.user.username) # all user except the current user
     
-    context= {"users": users}
+    context= {"users": users , "user": user_obj}
     return render(request, "main_chat.html", context)
     

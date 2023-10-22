@@ -22,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     #  path('', include('chatapp.urls')),
     path('', views.index  , name="index"),
-    path('chat/', views.chatPage  , name="chat"),
+    # path('chat/', views.chatPage  , name="chat"),
+    path('<str:username>' , views.chatPage, name="chat"),
     
 ]
